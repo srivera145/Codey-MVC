@@ -1,0 +1,23 @@
+:root {
+        --pr-grey: #606060;
+        /* A sophisticated dark grey */
+        --pr-silver: #A8A8A8;
+        /* A modern silver for lighter elements */
+        --pr-dark-blue: #2D2F3F;
+        /* A deep, rich blue */
+        --pr-light-blue: #5A8DEE;
+        /* A bright, welcoming blue */
+        --pr-white: #FFFFFF;
+        /* Pure white for contrast and readability */
+        --pr-black: #000000;
+        /* Deep black for text */
+    }
+
+    body,
+    html {
+        height: 100%;
+        margin: 0;
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        font-family: 'Poppins', sans-serif;
+        
+    }

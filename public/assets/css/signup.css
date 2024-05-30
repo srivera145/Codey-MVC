@@ -1,0 +1,80 @@
+
+    .signup-container {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 7px 7px 7px 7px;
+    }
+
+    .signup-card {
+        width: 100%;
+        max-width: 900px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        overflow: hidden;
+        padding: 7px 7px 7px 7px;
+    }
+
+    img {
+        width: 120%;
+    }
+
+    .form-control {
+        width: 100%;
+    }
+
+    @media (min-width: 768px) {
+        .signup-card {
+            display: flex;
+        }
+
+        .signup-logo {
+            flex-basis: 40%;
+        }
+    }
+
+    .signup-logo img {
+        width: 115%;
+        border-radius: 50%;
+        display: block;
+        margin: auto;
+    }
+
+    .signup-content {
+        width: 80%;
+        padding: 20px;
+    }
+
+    h1 {
+        font-weight: 600;
+        text-align: center;
+    }
+
+    .btn-custom {
+        background-color: var(--pr-dark-blue);
+        color: var(--pr-white);
+        border: 1px solid var(--pr-silver);
+        border-radius: 5px;
+        margin-bottom: 10px;
+        width: 100%;
+        padding: 12px;
+        font-size: 18px;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn-custom:hover {
+        background-color: var(--pr-light-blue);
+    }
+
+    .link-secondary a {
+        width: 100%;
+        text-decoration: none;
+        color: #007bff;
+    }
+
+    .form-text {
+        color: #6c757d;
+    }

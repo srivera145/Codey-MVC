@@ -1,0 +1,13 @@
+/* This is the verify.css file */
+
+#verify {
+    width: 60%;
+    margin-left: 450px;
+    margin-top: 7%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 60%;
+
+}

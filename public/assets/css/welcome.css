@@ -1,0 +1,79 @@
+/* This is the home.css file */
+
+h1 {
+            font-weight: 600;
+        }
+
+        .card-custom {
+            max-width: 900px;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            background-color: var(--pr-white);
+        }
+
+        .card-logo {
+            flex: 1 1 300px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        img {
+            width: 120%;
+            border-radius: 50%;
+        }
+
+        .card-body {
+            flex: 1 1 300px;
+            padding: 20px;
+        }
+
+        .btn-custom {
+            background-color: var(--pr-dark-blue);
+            color: var(--pr-white);
+            border: 1px solid var(--pr-silver);
+            border-radius: 5px;
+            margin-bottom: 10px;
+            width: 100%;
+            padding: 12px;
+            font-size: 18px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-custom:hover {
+            background-color: var(--pr-light-blue);
+        }
+
+        h1 {
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 20px;
+                height: auto;
+                margin: 0;
+                margin-left: 35px;
+                margin-right: 35px;
+            }
+
+            .card-custom {
+                flex-direction: column;
+            }
+
+            img {
+                width: 100%;
+                margin-right: 45px;
+            }
+        }
+
+        @media (max-width: 450px) {
+            .card-custom {
+                max-width: 100%;
+            }
+
+        }

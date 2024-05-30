@@ -1,0 +1,76 @@
+/* This is the login.css file */
+
+.login-container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .login-card {
+    width: 100%;
+    max-width: 900px;
+    padding: 7px 7px 7px 7px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+  }
+
+  h1 {
+    text-align: center;
+    font-weight: 600;
+  }
+
+  .form-control {
+    width: 100%;
+  }
+
+  @media (min-width: 768px) {
+    .login-card {
+      display: flex;
+    }
+
+    .login-logo {
+      flex-basis: 40%;
+    }
+  }
+
+  .login-logo img {
+    width: 115%;
+    border-radius: 50%;
+    display: block;
+    margin: auto;
+  }
+
+  .login-content {
+    padding: 20px;
+  }
+
+  .btn-custom {
+        background-color: var(--pr-dark-blue);
+        color: var(--pr-white);
+        border: 1px solid var(--pr-silver);
+        border-radius: 5px;
+        margin-bottom: 10px;
+        width: 100%;
+        padding: 12px;
+        font-size: 18px;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+  }
+
+  .btn-custom:hover {
+    background-color: var(--pr-light-blue);
+  }
+
+  .captcha-img {
+    margin-top: 10px;
+    margin-bottom: 15px;
+    border-radius: .25rem;
+  }
+
+  .link-secondary a {
+    text-decoration: none;
+    color: #007bff;
+  }
