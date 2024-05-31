@@ -32,7 +32,7 @@ A simple yet powerful templating engine allows you to separate your logic from y
 The framework includes sample code for controllers, models, migrations, and views to help you get started quickly.
 
 ## Directory Structure
-codey/
+`codey/
 ├── App/
 │ ├── controllers/
 │ ├── core/
@@ -66,7 +66,7 @@ codey/
 │ │ │ ├── stripe/
 │ ├── .htaccess
 │ ├── index.php
-├── codey
+├── codey`
 
 ## Installation
 
