@@ -1,6 +1,7 @@
 # Codey MVC Framework
 
 Codey MVC is a lightweight PHP MVC framework designed for developers to create robust and scalable web applications. This framework comes with built-in features to streamline the development process.
+You can also get help learning how to use Cody with the Codey MVC GPT Assisant at: https://chatgpt.com/g/g-gTAQk5vWg-codey-assistant
 
 ## Features
 
