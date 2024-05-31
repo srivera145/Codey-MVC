@@ -32,9 +32,9 @@ A simple yet powerful templating engine allows you to separate your logic from y
 The framework includes sample code for controllers, models, migrations, and views to help you get started quickly.
 
 ## Directory Structure
-`codey/\n
-├── App/\n
-│ ├── controllers/
+`codey/<br>
+├── App/<br>
+│ ├── controllers/<br>
 │ ├── core/
 │ ├── migrations/
 │ ├── models/
