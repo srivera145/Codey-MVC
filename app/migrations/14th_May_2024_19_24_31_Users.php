@@ -15,15 +15,15 @@ class Users extends Migration
 
 		/** create a table **/
 		$this->addColumn('id int(11) NOT NULL AUTO_INCREMENT');
-		$this->addColumn('first_name varchar(255) NULL');
-		$this->addColumn('last_name varchar(255) NULL');
-		$this->addColumn('email varchar(255) NULL');
-		$this->addColumn('role varchar(20) NULL');
-		$this->addColumn('password varchar(255) NULL');
-		$this->addColumn('token varchar(255) NULL');
-		$this->addColumn('verified tinyint(1) NULL');
-		$this->addColumn('date_created datetime NULL');
-		$this->addColumn('date_updated datetime NULL');
+		$this->addColumn('first_name varchar(255) NOT NULL');
+		$this->addColumn('last_name varchar(255) NOT NULL');
+		$this->addColumn('email varchar(255) NOT NULL');
+		$this->addColumn('role varchar(20) NOT NULL');
+		$this->addColumn('password varchar(255) NOT NULL');
+		$this->addColumn('token varchar(255) NOT NULL');
+		$this->addColumn('verified tinyint(1) NOT NULL');
+		$this->addColumn('date_created datetime NOT NULL');
+		$this->addColumn('date_updated datetime NOT NULL');
 		$this->addPrimaryKey('id');
 		/*
 		$this->addUniqueKey();

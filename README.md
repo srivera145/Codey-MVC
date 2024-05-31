@@ -1,74 +1,130 @@
-# Codey MVC Framework
+Codey MVC Framework
+Codey MVC is a lightweight PHP MVC framework designed to help developers quickly build web applications. This framework includes several built-in features and follows the MVC (Model-View-Controller) architectural pattern, making it easy to maintain and scale your applications.
 
-Codey MVC is a PHP MVC framework designed to be lightweight and easy to use.
+Features
+MVC Structure: A clear separation of concerns with Models, Views, and Controllers.
+Database Management: Easy database handling with built-in migration and seeder functionality.
+Authentication:
+User email verification using PHPMailer.
+Captcha support for enhanced security.
+Subscription Payments: Integrated Stripe payments for managing subscriptions.
+Email Capabilities: Full email support for various use cases.
+Sample Code: Includes sample controllers, models, views, and migrations to help you get started quickly.
+Directory Structure
+csharp
+Copy code
+Codey/
+├── App/
+│   ├── codey/
+│   │   ├── samples/
+│   │   │   ├── controller-sample.php
+│   │   │   ├── migration-sample.php
+│   │   │   ├── model-sample.php
+│   │   │   ├── sample.php
+│   │   │   ├── seeder-sample.php
+│   │   │   ├── view-sample.view.php
+│   │   │   └── sample.css
+│   │   ├── Codey.php
+│   │   ├── Database.php
+│   │   ├── init.php
+│   │   └── Migration.php
+│   ├── controllers/
+│   ├── core/
+│   │   ├── App.php
+│   │   ├── config.php
+│   │   ├── Controller.php
+│   │   ├── Database.php
+│   │   ├── functions.php
+│   │   ├── init.php
+│   │   └── Model.php
+│   ├── migrations/
+│   ├── models/
+│   └── views/
+├── public/
+│   ├── assets/
+│   ├── .htaccess
+│   └── index.php
+└── codey
+Getting Started
+Requirements
+PHP 7.4 or higher
+Composer
+MySQL
+Installation
+Clone the repository:
 
-## Features
+sh
+Copy code
+git clone https://github.com/srivera145/codey-mvc.git
+Navigate to the project directory:
 
-- Simple and intuitive structure
-- Captcha integration for form security
-- User email verification for authentication
-- Email capabilities for various notifications
+sh
+Copy code
+cd codey-mvc
+Install dependencies:
 
-## Directory Structure
+sh
+Copy code
+composer install
+Set up the environment:
 
-- **codey** (root folder)
-  - **App** folder
-    - **codey**, **controllers**, **core**, **migrations**, **models**, **views** folders
-    - **codey** folder contains:
-      - samples folder
-      - Codey.php
-      - Database.php
-      - init.php
-      - Migration.php
-    - samples folder contains:
-      - controller-sample.php
-      - migration-sample.php
-      - model-sample.php
-      - sample.php
-      - seeder-sample.php
-      - view-sample.view.php
-      - sample.css
-    - **core** folder contains:
-      - App.php
-      - config.php
-      - Controller.php
-      - Database.php
-      - functions.php
-      - init.php
-      - Model.php
-  - **public** folder
-    - **assets** folder
-    - .htaccess file
-    - index.php file
-  - codey file
+Navigate to the core/config.php file and configure your environment variables.
+Run migrations:
 
-## New Features
+sh
+Copy code
+php codey migrate
+Seed the database:
 
-### Captcha Integration
+sh
+Copy code
+php codey seed
+Start the development server:
 
-Captcha has been integrated to enhance form security and prevent automated submissions. You can easily add Captcha to your forms by following the examples in the samples folder.
+sh
+Copy code
+php -S localhost:8000 -t public
+Usage
+Controllers: Handle the logic of your application.
+Models: Represent the data structure and interact with the database.
+Views: Display the output to the user.
+Examples
+Creating a Controller:
 
-### User Email Verification
+php
+Copy code
+<?php
 
-User email verification is now supported to ensure the authenticity of user registrations. When a user registers, they will receive an email with a verification link. They must click this link to verify their email address and activate their account.
+namespace App\controllers;
 
-### Email Capabilities
+use Codey\core\Controller;
 
-The framework now includes email capabilities, allowing you to send various types of emails such as:
+class SampleController extends Controller
+{
+    public function index()
+    {
+        return $this->view('sample.view', ['message' => 'Hello, World!']);
+    }
+}
+Creating a Model:
 
-- Registration confirmation
-- Password reset
-- Notifications
+php
+Copy code
+<?php
 
-These features can be configured in the core configuration files. For detailed instructions, refer to the samples provided in the samples folder.
+namespace App\models;
 
-## Getting Started
+use Codey\core\Model;
 
-1. **Installation**: Download and extract the Codey MVC framework.
-2. **Configuration**: Update the configuration files in the core folder to match your environment.
-3. **Run**: Access the application through your web server.
+class SampleModel extends Model
+{
+    protected $table = 'samples';
 
-For detailed documentation and examples, please refer to the samples folder and the inline comments in the code.
+    public function getAllSamples()
+    {
+        return $this->all();
+    }
+}
 
 ## Codey CLI Commands
 

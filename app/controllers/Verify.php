@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace Controller;
 
@@ -9,6 +9,7 @@ use \Core\Session;
 use \Model\User;
 use \Core\Mailer;
 use \Model\Model;
+use \Model\Database;
 
 /**
  * Verify class
@@ -17,6 +18,7 @@ use \Model\Model;
 class Verify
 {
 	use MainController;
+	use \Model\Database;
 
 	public function index()
 	{
@@ -28,7 +30,7 @@ class Verify
 			'error' => $ses->get('error'),
 			'success' => $ses->get('success'),
 			'verified' => $ses->get('verified'),
-			'user' => $ses->user()
+			'user' => $ses->user(),
 
 		];
 
@@ -43,11 +45,16 @@ class Verify
 
 	public function generate_token()
 	{
-		$token = bin2hex(random_bytes(50));
-		$ses = new Session();
-		$ses->set('token', $token);
+		$token = bin2hex(random_bytes(16));
+		$ses = new Session;
+		$user = new User;
+		$userId = $ses->user('id');
+
+		if ($userId) {
+			$user->update($userId, ['token' => $token]);
+		}
+
 		return $token;
-		echo $token;
 	}
 
 	public function send_verification()
@@ -55,25 +62,28 @@ class Verify
 		$ses = new \Core\Session;
 		$userId = $ses->get('id');
 		$email = $ses->user('email');
-		$token = $ses->user('token');
+		$token = $this->generate_token();
 
 		if ($email) {
 
 			$to = $email;
-			$subject = "Email Verification";
+			$subject = 'Email Verification';
 			$message =
-			'<h1>Verify your email address</h1><p>Please click the link below to verify your email address:</p><p><a href="' . ROOT . '/verify/verify_account?token=' . $token . '">Verify Email</a></p>';
+				'<h1>Verify your email address</h1><p>Please click the link below to verify your email address:</p><p><a href="' . ROOT . '/verify/verify_account?token=' . $token . '">Verify Email</a></p>';
 
 			$mail = new Mailer();
 			if ($mail->send($to, $subject, $message)) {
 				// call update_verified method from Session class
 
-				echo "Verification email sent to $to. Please check your email.";
+				echo '<div style="width: 60%; background-color: rgba(0, 128, 0, 0.5); border-radius: 15px; box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2); color: green; padding: 10px; margin: 20px 0; text-align: center;">
+        Verification email sent to ' . htmlspecialchars($to) . '. Please check your email.
+      </div>';
+
 			} else {
-				echo "Failed to send verification email.";
+				echo 'Failed to send verification email.';
 			}
 		} else {
-			echo "User email not found.";
+			echo 'User email not found.';
 		}
 	}
 
@@ -93,11 +103,12 @@ class Verify
 			$ses->set('success', 'Your account has been successfully verified.');
 			$this->view('verify_success'); // Render the success view
 		} else {
-			
+
 			$ses->set('error', 'Invalid verification token.');
 
-			
+
 			$this->view('verify_error'); // Render the error view
 		}
+
 	}
 }

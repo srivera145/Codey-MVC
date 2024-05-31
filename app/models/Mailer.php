@@ -29,10 +29,10 @@ class Mailer
         // Server settings
         $this->mail->isSMTP();
         $this->mail->SMTPDebug = SMTP::DEBUG_OFF; // Enable verbose debug output
-        $this->mail->Host = 'smtp.titan.email';
+        $this->mail->Host =  EMAIL_HOST;   // Set the SMTP server to send through
         $this->mail->SMTPAuth = true;
-        $this->mail->Username = 'semlyai@digitaledgewebservices.com'; // SMTP username
-        $this->mail->Password = 'nC&hn2&U'; // SMTP password
+        $this->mail->Username = EMAIL_USERNAME; // SMTP username
+        $this->mail->Password = EMAIL_PASS; // SMTP password
         $this->mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; // Enable TLS encryption
         $this->mail->Port = 587; // TCP port to connect to
     }
@@ -41,7 +41,7 @@ class Mailer
     {
         try {
             // Recipients
-            $this->mail->setFrom($from, $fromName);
+            $this->mail->setFrom(EMAIL_USERNAME, APP_NAME);
             $this->mail->addAddress($to);
 
             // Content

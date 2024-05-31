@@ -5,7 +5,7 @@ namespace Controller;
 defined('ROOTPATH') OR exit('Access Denied!');
 
 require ROOTPATH . 'assets/vendor/autoload.php';
-\Stripe\Stripe::setApiKey('sk_test_51N44CEEo9JK0lLFsfXZTtDea1kpYrznvpxwGnlIWNdyH3V5kCCEVKY7LNhJDdstzyxqiMsFFgRVJuaFJpix93k5800DTzePmbb');
+\Stripe\Stripe::setApiKey(STRIPE_API_KEY);
 
 use \Core\Request;
 use \Core\Session;

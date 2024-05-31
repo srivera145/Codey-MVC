@@ -349,3 +349,9 @@ function delete_images_from_content(string $content, string $content_new = ''):v
 
 }
 
+// core/functions.php
+function config($key)
+{
+  $config = include 'config.php';
+  return isset($config[$key]) ? $config[$key] : null;
+}

@@ -21,20 +21,20 @@ $ses = new \Core\Session;
                 <a class="nav-link" href="subscribe">Subscribe</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="logout">Log Out</a>
+                <a class="nav-link" href="profile">Profile</a>
             </li>
-            <?php if($ses->is_logged_in()):?>
-		        <li class="nav-item dropdown">
-		          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-		            Hi, <?=$ses->user('first_name')?>
-		          </a>
-		          <ul class="dropdown-menu">
-		            <li><a class="dropdown-item" href="<?=ROOT?>/profile">Profile</a></li>
+            <?php if ($ses->is_logged_in()) : ?>
+                <li class="nav-item dropdown float-end">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Hi, <?= $ses->user('first_name') ?>
+                    </a>
+                    <ul class="dropdown-menu float-end">
+                        <li><a class="dropdown-item" href="logout">Log Out</a></li>
 
-		            <?php if($ses->user('role') == 'admin'):?>
-			            <li><a class="dropdown-item" href="<?=ROOT?>/admin">Admin</a></li>
-			        <?php endif?>
-        </ul>
+                        <?php if ($ses->user('role') == 'admin') : ?>
+                            <li><a class="dropdown-item" href="<?= ROOT ?>/admin">Admin</a></li>
+                        <?php endif ?>
+                    </ul>
     </div>
 </nav>
-<?php endif?>
+<?php endif ?>

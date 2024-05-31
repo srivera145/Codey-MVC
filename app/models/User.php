@@ -131,8 +131,8 @@ class User
 		if($this->validate($data))
 		{
 			//add extra user columns here
-			$data['token'] = bin2hex(random_bytes(50));
 			$data['verified'] = 0;
+			$data['token'] = bin2hex(random_bytes(16));
 			$data['email'] = $data['email'];
 			$data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
 			$data['role'] = 'user';
