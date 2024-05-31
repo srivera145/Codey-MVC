@@ -31,43 +31,6 @@ A simple yet powerful templating engine allows you to separate your logic from y
 ### Sample Code
 The framework includes sample code for controllers, models, migrations, and views to help you get started quickly.
 
-## Directory Structure
-`codey/<br>
-├── App/<br>
-│ ├── controllers/<br>
-│ ├── core/
-│ ├── migrations/
-│ ├── models/
-│ ├── views/
-│ ├── codey/
-│ │ ├── samples/
-│ │ │ ├── controller-sample.php
-│ │ │ ├── migration-sample.php
-│ │ │ ├── model-sample.php
-│ │ │ ├── sample.php
-│ │ │ ├── seeder-sample.php
-│ │ │ ├── view-sample.view.php
-│ │ │ ├── sample.css
-│ │ ├── Codey.php
-│ │ ├── Database.php
-│ │ ├── init.php
-│ │ ├── Migration.php
-│ ├── core/
-│ │ ├── App.php
-│ │ ├── config.php
-│ │ ├── Controller.php
-│ │ ├── Database.php
-│ │ ├── functions.php
-│ │ ├── init.php
-│ │ ├── Model.php
-├── public/
-│ ├── assets/
-│ │ ├── vendor/
-│ │ │ ├── stripe/
-│ ├── .htaccess
-│ ├── index.php
-├── codey`
-
 ## Installation
 
 1. Clone the repository: `git clone https://github.com/srivera145/codey-mvc.git`
@@ -75,10 +38,53 @@ The framework includes sample code for controllers, models, migrations, and view
 3. Install dependencies: `composer install`
 4. Navigate to `codey/core/config.php` and change the required variables
 
-## Usage
+## Codey CLI Commands
 
-1. Run the application: `php -S localhost:8000 -t public`
-2. Open your browser and visit `http://localhost/codey/public`
+Usage: php codey [command] [options]
+
+    Commands
+      help               Displays this help message.
+      serve              Starts the built-in PHP server.
+      make:controller    Generates a new controller file.
+      make:model         Generates a new model file.
+      make:view          Generates a new view file.
+      make:migration     Generates a new migration file.
+      make:seeder        Generates a new seeder file.
+      migrate            Locates and runs a migration file.
+      migrate:refresh    Runs the 'down' & then 'up' method for a migration file.
+      migrate:rollback   Runs the 'down' method for a migration file.
+      list:migrations    Displays all migration files available.
+      list:controllers   Displays all controllers available.
+      list:models        Displays all models available.
+      list:views         Displays all views available.
+      db:create          Create a new database schema.
+      db:seed            Runs the specified seeder to populate known data into the database.
+      db:table           Retrieves information on the selected table.
+      db:drop            Drop/Delete a database.
+      version            Displays the current version of Codey.
+      about              Displays information about Codey.
+      clear              Clears the screen.
+      exit               Exits the Codey CLI.
+      quit               Exits the Codey CLI.
+
+    Examples
+        php codey make:controller HomeController
+        php codey make:model User
+        php codey make:view home
+        php codey make:migration create_users_table
+        php codey make:seeder UsersTableSeeder
+        php codey migrate
+        php codey migrate:refresh
+        php codey migrate:rollback
+        php codey list:migrations
+        php codey list:controllers
+        php codey list:models
+        php codey list:views
+        php codey db:create
+        php codey db:seed
+        php codey db:table users
+        php codey db:drop
+        php codey serve
 
 ## Contributing
 
